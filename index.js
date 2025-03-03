@@ -15,7 +15,8 @@ async function generatePdf(file, options, callback) {
   }
 
   const browser = await puppeteer.launch({
-    args: args
+    args: args,
+    timeout: 300000, // 300 seconds
   });
   const page = await browser.newPage();
 
